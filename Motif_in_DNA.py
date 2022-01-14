@@ -10,8 +10,8 @@ if DNA.count('A')+DNA.count('T')+DNA.count('G')+DNA.count('C') == len(DNA):
 #DNA sekansında 'A, T, G, C' nükleotidleri dışında harf ile yanlışlık yapılmadığından emin olmak için
     if MOTIF.count('A')+MOTIF.count('T')+MOTIF.count('G')+MOTIF.count('C') == len(MOTIF):
     #Motif sekansında 'A, T, G, C' nükleotidleri dışında harf ile yanlışlık yapılmadığından emin olmak için
-        if len(DNA) > len(MOTIF):
-        #DNA'nın içinde bulunacak motiften uzun olduğuna emin olmak için  
+        if len(DNA) >= len(MOTIF):
+        #DNA'nın içinde bulunacak motiften uzun veya motif ile aynı uzunlukta olduğuna emin olmak için  
             if MOTIF in DNA:
             #Motifin DNA'da bulunması
                 pozisyon = "" #Başlangıç için boş string
@@ -22,10 +22,12 @@ if DNA.count('A')+DNA.count('T')+DNA.count('G')+DNA.count('C') == len(DNA):
                         pozisyon = pozisyon+ str(i+1)+" " #Python index '0'dan başladığı için '+1'
                         #DNA'nın motife eşit olduğu başlangıç pozisyonları
                 print(pozisyon)
+                if DNA == MOTIF: #DNA ile motifin aynı olması durumu
+                    print("Motif, DNA ile aynı sekansa sahiptir.")
             else:
                 print("Motif DNA sekansında bulunmamaktadır.")
         else:
-            print("Girilen motif uzunluğu, DNA uzunluğuna eşit veya DNA'dan daha uzun olamaz! Lütfen buna dikkat ediniz.")
+            print("Girilen motif, DNA'dan daha uzun olamaz! Lütfen buna dikkat ediniz.")
     else:
         print("Hatalı motif sekansı girdiniz. Lütfen motifin sadece 'A, T, G, C'den oluştuğundan emin olunuz.")
 else:
