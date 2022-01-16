@@ -20,7 +20,7 @@ if DNA.count('A')+DNA.count('T')+DNA.count('G')+DNA.count('C') == len(DNA):
                     if DNA[i:i+len(MOTIF)] == MOTIF:
                         #DNA'nın motifi içerdiği index
                         pozisyon = pozisyon+ str(i+1)+" " #Python index '0'dan başladığı için '+1'
-                        #DNA'nın motife eşit olduğu başlangıç pozisyonları
+                        #DNA'nın motifi içerdiği kısımların başlangıç pozisyonları
                 print(pozisyon)
                 if DNA == MOTIF: #DNA ile motifin aynı olması durumu
                     print("Motif, DNA ile aynı sekansa sahiptir.")
